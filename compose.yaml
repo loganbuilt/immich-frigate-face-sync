@@ -1,7 +1,7 @@
 services:
   immich-frigate-face-sync:
     build: .
-    image: ghcr.io/owner/immich-frigate-face-sync:latest
+    image: ghcr.io/loganbuilt/immich-frigate-face-sync:latest
     env_file: .env
     restart: unless-stopped
     ports:
