@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "immich-frigate-face-sync"
+version = "1.0.0"
+description = "Sync favorite Immich people into Frigate's native face recognition library."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "Apache-2.0"
+authors = [{ name = "immich-frigate-face-sync contributors" }]
+dependencies = [
+  "httpx>=0.28,<1",
+  "pillow>=11,<13",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.17,<2",
+  "pytest>=8.4,<9",
+  "pytest-httpx>=0.35,<1",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+immich-frigate-face-sync = "immich_frigate_face_sync.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/immich_frigate_face_sync"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+packages = ["immich_frigate_face_sync"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

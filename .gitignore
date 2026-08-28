@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+*.egg-info/
+data/
+*.sqlite3*
+.env
+project_plan.md
+.DS_Store
+project_plan.md

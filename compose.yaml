@@ -1,0 +1,19 @@
+services:
+  immich-frigate-face-sync:
+    build: .
+    image: ghcr.io/owner/immich-frigate-face-sync:latest
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - face-sync-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-m", "immich_frigate_face_sync.healthcheck"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  face-sync-data:
