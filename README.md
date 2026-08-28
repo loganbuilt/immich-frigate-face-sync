@@ -207,6 +207,12 @@ pytest
 docker build -t immich-frigate-face-sync:test .
 ```
 
-A GitHub Actions CI/publish workflow template is included at
-`docs/ci-workflow.example.yml`. Copy it to `.github/workflows/ci.yml` after your GitHub token has
-permission to push workflow files.
+The release workflow builds and tests pull requests. On tags such as `v0.1.0`, it publishes a
+multi-arch image to:
+
+```text
+ghcr.io/<owner>/immich-frigate-face-sync:v0.1.0
+ghcr.io/<owner>/immich-frigate-face-sync:0.1.0
+ghcr.io/<owner>/immich-frigate-face-sync:0.1
+ghcr.io/<owner>/immich-frigate-face-sync:latest
+```
