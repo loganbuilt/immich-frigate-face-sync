@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "immich-frigate-face-sync"
-version = "1.0.0"
+version = "0.1.0"
 description = "Sync favorite Immich people into Frigate's native face recognition library."
 readme = "README.md"
 requires-python = ">=3.13"
