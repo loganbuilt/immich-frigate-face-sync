@@ -12,7 +12,7 @@ license = "Apache-2.0"
 authors = [{ name = "immich-frigate-face-sync contributors" }]
 dependencies = [
   "httpx>=0.28,<1",
-  "pillow>=11,<13",
+  "pillow>=11,<14",
 ]
 
 [project.optional-dependencies]
